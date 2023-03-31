@@ -5,11 +5,11 @@
     "**/*.cy.ts",
     "**/*.spec.ts",
     "**/__tests__/**/*",
-    "src/sandbox/*"
+    "src/sandbox/**/*",
+    "src/main.ts"
   ],
   "compilerOptions": {
     "module": "es2022",
-    "moduleResolution": "Node",
-    "strict": true
+    "moduleResolution": "Node"
   }
 }

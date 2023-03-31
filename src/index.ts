@@ -4,12 +4,12 @@ import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
 import './styles/global.scss'
 
-export const UiInput = defineAsyncComponent(() => import('./components/UiInput.vue'))
-export const UiField = defineAsyncComponent(() => import('./components/UiField.vue'))
-export const UiSidebar = defineAsyncComponent(() => import('./components/UiSidebar.vue'))
-export const UiInputError = defineAsyncComponent(() => import('./components/UiInputError.vue'))
-export const UiIcon = defineAsyncComponent(() => import('./components/UiIcon.vue'))
-export const UiSidebarElement = defineAsyncComponent(() => import('./components/UiSidebarElement.vue'))
+export const UiInput = defineAsyncComponent(() => import('@components/UiInput.vue'))
+export const UiField = defineAsyncComponent(() => import('@components/UiField.vue'))
+export const UiSidebar = defineAsyncComponent(() => import('@components/UiSidebar.vue'))
+export const UiInputError = defineAsyncComponent(() => import('@components/UiInputError.vue'))
+export const UiIcon = defineAsyncComponent(() => import('@components/UiIcon.vue'))
+export const UiSidebarElement = defineAsyncComponent(() => import('@components/UiSidebarElement.vue'))
 
 export default {
   install(app: App) {

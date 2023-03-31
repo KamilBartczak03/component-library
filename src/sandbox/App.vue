@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import * as Component from '../index'
 import { ref } from 'vue'
 
 const modelString = ref('')
