@@ -1,6 +1,6 @@
 {
   "name": "@kamilbartczak-infer/component-library",
-  "version": "0.0.30",
+  "version": "0.0.32",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,7 @@
   "types": "dist/types/index.d.ts",
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
+    "@vue/runtime-core": "^3.2.47",
     "vue": "^3.2.47",
     "vue-router": "4"
   },

@@ -1,21 +1,34 @@
-import { defineAsyncComponent } from 'vue'
+import { App, defineAsyncComponent } from 'vue'
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
 import './styles/global.scss'
 
-const UiInput = defineAsyncComponent(() => import('./components/UiInput.vue'))
-const UiField = defineAsyncComponent(() => import('./components/UiField.vue'))
-const UiSidebar = defineAsyncComponent(() => import('./components/UiSidebar.vue'))
-const UiInputError = defineAsyncComponent(() => import('./components/UiInputError.vue'))
-const UiIcon = defineAsyncComponent(() => import('./components/UiIcon.vue'))
-const UiSidebarElement = defineAsyncComponent(() => import('./components/UiSidebarElement.vue'))
+export const UiInput = defineAsyncComponent(() => import('./components/UiInput.vue'))
+export const UiField = defineAsyncComponent(() => import('./components/UiField.vue'))
+export const UiSidebar = defineAsyncComponent(() => import('./components/UiSidebar.vue'))
+export const UiInputError = defineAsyncComponent(() => import('./components/UiInputError.vue'))
+export const UiIcon = defineAsyncComponent(() => import('./components/UiIcon.vue'))
+export const UiSidebarElement = defineAsyncComponent(() => import('./components/UiSidebarElement.vue'))
 
 export default {
-  UiInput,
-  UiField,
-  UiSidebar,
-  UiInputError,
-  UiIcon,
-  UiSidebarElement
+  install(app: App) {
+    app.component('UiInput', UiInput)
+    app.component('UiInputError', UiInputError)
+    app.component('UiField', UiField)
+    app.component('UiSidebar', UiSidebar)
+    app.component('UiSidebarElement', UiSidebarElement)
+    app.component('UiIcon', UiIcon)
+  }
+}
+
+declare module '@vue/runtime-core' {
+  export interface GlobalComponents {
+    UiInput: typeof UiInput
+    UiInputError: typeof UiInputError
+    UiField: typeof UiField
+    UiSidebar: typeof UiSidebar
+    UiSidebarElement: typeof UiSidebarElement
+    UiIcon: typeof UiIcon
+  }
 }

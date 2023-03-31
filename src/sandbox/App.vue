@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Component from '../index'
+import * as Component from '../index'
 import { ref } from 'vue'
 
 const modelString = ref('')
@@ -14,41 +14,41 @@ const sidebarItems = [
   <main class="display">
     <section>
       <pre>UiSidebar.vue</pre>
-      <Component.UiSidebar :items="sidebarItems" v-model="expandedNav" />
+      <UiSidebar :items="sidebarItems" v-model="expandedNav" />
       <button @click="expandedNav = !expandedNav">expand</button>
     </section>
     <section>
       <pre>UiInput.vue</pre>
-      <Component.UiInput v-model="modelString" placeholder="username" />
+      <UiInput v-model="modelString" placeholder="username" />
     </section>
     <section>
       <pre>UiInput.vue password</pre>
-      <Component.UiInput v-model="modelString" placeholder="surname" type="number" />
+      <UiInput v-model="modelString" placeholder="surname" type="number" />
     </section>
     <section>
       <pre>UiInput.vue error</pre>
-      <Component.UiInput v-model="modelString" placeholder="surname" error />
+      <UiInput v-model="modelString" placeholder="surname" error />
     </section>
     <section>
       <pre>UiInput.vue disabled</pre>
-      <Component.UiInput v-model="modelString" placeholder="surname" disabled />
+      <UiInput v-model="modelString" placeholder="surname" disabled />
     </section>
     <section>
       <pre>UiField.vue -> UiInput.vue error</pre>
-      <Component.UiField :error="modelString" label="Password" hint="Must be at least 8 characters">
-        <Component.UiInput v-model="modelString" placeholder="Your password" />
-      </Component.UiField>
+      <UiField :error="modelString" label="Password" hint="Must be at least 8 characters">
+        <UiInput v-model="modelString" placeholder="Your password" />
+      </UiField>
     </section>
 
     <section>
       <pre>UiField.vue form</pre>
       <form>
-        <Component.UiField label="Username">
-          <Component.UiInput v-model="modelString" placeholder="Your username" />
-        </Component.UiField>
-        <Component.UiField label="Password">
-          <Component.UiInput v-model="modelString" placeholder="Your password" type="password" />
-        </Component.UiField>
+        <UiField label="Username">
+          <UiInput v-model="modelString" placeholder="Your username" />
+        </UiField>
+        <UiField label="Password">
+          <UiInput v-model="modelString" placeholder="Your password" type="password" />
+        </UiField>
       </form>
     </section>
   </main>
