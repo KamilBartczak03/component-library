@@ -1,12 +1,22 @@
 <script setup lang="ts">
-import * as Component from '../index'
+import Component from '../index'
 import { ref } from 'vue'
 
 const modelString = ref('')
+const expandedNav = ref(false)
+const sidebarItems = [
+  { icon: 'flag', text: 'feature flag', href: 'https://google.com' },
+  { icon: 'heart', text: 'saved', href: 'https://google.com' }
+]
 </script>
 
 <template>
   <main class="display">
+    <section>
+      <pre>UiSidebar.vue</pre>
+      <Component.UiSidebar :items="sidebarItems" v-model="expandedNav" />
+      <button @click="expandedNav = !expandedNav">expand</button>
+    </section>
     <section>
       <pre>UiInput.vue</pre>
       <Component.UiInput v-model="modelString" placeholder="username" />
