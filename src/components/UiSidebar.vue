@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import UiSidebarElement from '@components/UiSidebarElement.vue'
+import UiIcon from '@components/UiIcon.vue'
 
 export interface NavItem {
   text: string
@@ -14,11 +15,16 @@ const props = defineProps<{
   items: NavItem[]
 }>()
 
+const emits = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void
+}>()
+
 const classExpanded = computed(() => (props.modelValue ? 'ui-sidebar--expanded' : ''))
 </script>
 
 <template>
   <nav :class="['ui-sidebar', classExpanded]">
+    <UiIcon icon="menu" class="ui-sidebar__menu" @click="emits('update:modelValue', !props.modelValue)" />
     <UiSidebarElement v-for="item in items" v-bind="item" :expanded="modelValue" />
   </nav>
 </template>
@@ -33,9 +39,19 @@ const classExpanded = computed(() => (props.modelValue ? 'ui-sidebar--expanded' 
   box-sizing: content-box;
   width: 4rem;
   transition: width 200ms ease;
-
   --icon-color: var(--cp-color-white);
   --icon-size: 1.25rem;
+
+  &__menu {
+    margin: 0 0.75rem 2rem 0.75rem;
+    padding: 0.65rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--cp-color-blue-600);
+    }
+  }
 
   &--expanded {
     width: 16rem;
