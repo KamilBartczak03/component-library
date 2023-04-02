@@ -10,6 +10,8 @@ export const UiSidebar = defineAsyncComponent(() => import('@components/UiSideba
 export const UiInputError = defineAsyncComponent(() => import('@components/UiInputError.vue'))
 export const UiIcon = defineAsyncComponent(() => import('@components/UiIcon.vue'))
 export const UiSidebarElement = defineAsyncComponent(() => import('@components/UiSidebarElement.vue'))
+export const UiSwitch = defineAsyncComponent(() => import('@components/UiSwitch.vue'))
+export const UiCheckbox = defineAsyncComponent(() => import('@components/UiCheckbox.vue'))
 
 export default {
   install(app: App) {
@@ -19,6 +21,8 @@ export default {
     app.component('UiSidebar', UiSidebar)
     app.component('UiSidebarElement', UiSidebarElement)
     app.component('UiIcon', UiIcon)
+    app.component('UiSwitch', UiSwitch)
+    app.component('UiCheckbox', UiCheckbox)
   }
 }
 
@@ -30,5 +34,7 @@ declare module '@vue/runtime-core' {
     UiSidebar: typeof UiSidebar
     UiSidebarElement: typeof UiSidebarElement
     UiIcon: typeof UiIcon
+    UiSwitch: typeof UiSwitch
+    UiCheckbox: typeof UiCheckbox
   }
 }

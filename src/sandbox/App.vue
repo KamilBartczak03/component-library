@@ -12,6 +12,22 @@ const sidebarItems = [
 <template>
   <main class="display">
     <section>
+      <pre>UiCheckbox.vue</pre>
+      <UiCheckbox v-model="expandedNav" caption="Expand menu" />
+    </section>
+    <section>
+      <pre>UiCheckbox.vue disabled</pre>
+      <UiCheckbox v-model="expandedNav" caption="Expand menu" disabled />
+    </section>
+    <section>
+      <pre>UiSwitch.vue</pre>
+      <UiSwitch v-model="expandedNav" caption="Expand menu" />
+    </section>
+    <section>
+      <pre>UiSwitch.vue disabled</pre>
+      <UiSwitch v-model="expandedNav" caption="Expand menu" disabled />
+    </section>
+    <section>
       <pre>UiSidebar.vue</pre>
       <UiSidebar :items="sidebarItems" v-model="expandedNav" />
       <button @click="expandedNav = !expandedNav">expand</button>
