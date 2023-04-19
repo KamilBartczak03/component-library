@@ -8,22 +8,29 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-      - name: checkout
-      uses: actions/checkout@v3
-      - name: setup node
-      uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: https://registry.npmjs.org
-      - name: install pnpm
-      uses: pnpm/action-setup@v2
-        with:
-          version: 7
-      - name: install packages
-        run: pnpm install --frozen-lockfile
-      - name: build
-        run: pnpm build
-      - name: publish
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+          with:
+            node-version: 18
+            registry-url: https://registry.npmjs.org
+      # - name: checkout
+      # uses: 
+      # - name: setup node
+      # uses: 
+      #   with:
+      #     node-version: 18
+      #     
+      # - name: install pnpm
+      # uses: pnpm/action-setup@v2
+      #   with:
+      #     version: 7
+      # - name: install packages
+      #   run: pnpm install --frozen-lockfile
+      # - name: build
+      #   run: pnpm build
+      # - name: publish
+      #   run: npm publish --access public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
