@@ -22,19 +22,7 @@ jobs:
           version: 7
       - name: Install packages and build
         run: pnpm install --frozen-lockfile && pnpm build
-      # - name: checkout
-      # uses:
-      # - name: setup node
-      # uses:
-      #   with:
-      #     node-version: 18
-      #
-      # - name: install pnpm
-      # - name: install packages
-      #   run: pnpm install --frozen-lockfile
-      # - name: build
-      #   run: pnpm build
-      # - name: publish
-      #   run: npm publish --access public
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      - name: publish npm package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
