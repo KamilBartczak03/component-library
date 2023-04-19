@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { RouterLink } from 'vue-router'
 import type { MenuConfig, MenuLinkRecord, MenuBaseRecord } from './types'
 
 const props = defineProps<{ config: MenuConfig }>()
 
 const recordToLink = (r: MenuLinkRecord) => ({
-  component: RouterLink,
+  component: 'RouterLink',
   props: {
     to: r.link,
     class: 'ui-menu__element ui-menu__element--link'
