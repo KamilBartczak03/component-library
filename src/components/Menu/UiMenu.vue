@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { MenuConfig, MenuLinkRecord, MenuBaseRecord } from './types'
+import type { MenuConfig, MenuLinkRecord, MenuBaseRecord } from '@/types/menu'
 
 const props = defineProps<{ config: MenuConfig }>()
 

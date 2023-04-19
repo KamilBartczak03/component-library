@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import UiInputError from '@components/UiInputError.vue'
 
 const props = defineProps<{
   error?: string

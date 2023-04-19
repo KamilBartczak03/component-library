@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import UiSidebarElement from '@components/UiSidebarElement.vue'
-import UiIcon from '@components/UiIcon.vue'
 
 export interface NavItem {
   text: string

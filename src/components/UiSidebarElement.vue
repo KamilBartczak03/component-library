@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import UiIcon from '@components/UiIcon.vue'
 import { computed } from 'vue'
 
 const props = defineProps<{

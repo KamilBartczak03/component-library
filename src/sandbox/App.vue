@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import UiMenuZ from '../components/Menu/UiMenu.vue'
-import { MenuConfig } from '../components/Menu/types'
+import type { MenuConfig } from '@/types/menu'
 
 const modelString = ref('')
 const expandedNav = ref(false)
@@ -29,7 +28,7 @@ const config = [
   <main class="display">
     <section>
       <pre>UiMenu.vue</pre>
-      <UiMenuZ :config="config" />
+      <UiMenu :config="config" />
     </section>
     <section>
       <pre>UiCheckbox.vue</pre>
