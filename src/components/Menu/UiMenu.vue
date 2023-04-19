@@ -1,33 +1,8 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router'
+import type { MenuConfig, MenuLinkRecord, MenuBaseRecord } from './types'
 
-const config = [
-  { type: 'title', text: 'Access' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Collaborators' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Moderation options' },
-  { type: 'title', text: 'Code and automation' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Branches' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Tags' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Rules' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Actions' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Environments' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Code' },
-  { icon: 'flag', type: 'link', link: '/', text: 'Pages' }
-] as MenuConfig
-
-interface MenuBaseRecord {
-  type: string
-  text: string
-  icon?: string
-}
-interface MenuLinkRecord extends MenuBaseRecord {
-  type: 'link'
-  link: string
-}
-interface MenuTitleRecord extends MenuBaseRecord {
-  type: 'title'
-}
-type MenuConfig = (MenuTitleRecord | MenuLinkRecord)[]
+const props = defineProps<{ config: MenuConfig }>()
 
 const recordToLink = (r: MenuLinkRecord) => ({
   component: RouterLink,
@@ -58,7 +33,7 @@ function createComponents(config: MenuConfig) {
 
 <template>
   <nav class="ui-menu">
-    <component v-for="option in createComponents(config)" :is="option.component" v-bind="option.props">
+    <component v-for="option in createComponents(props.config)" :is="option.component" v-bind="option.props">
       <UiIcon v-if="option.icon" :icon="option.icon" class="ui-menu__element-icon" />
       {{ option.text }}
     </component>

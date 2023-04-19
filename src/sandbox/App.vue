@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import UiMenuZ from '../components/Menu/UiMenu.vue'
+import { MenuConfig } from '../components/Menu/types'
 
 const modelString = ref('')
 const expandedNav = ref(false)
@@ -7,13 +9,27 @@ const sidebarItems = [
   { icon: 'flag', text: 'feature flag', href: 'https://google.com' },
   { icon: 'heart', text: 'saved', href: 'https://google.com' }
 ]
+const config = [
+  { type: 'title', text: 'Access' },
+  { icon: 'check', type: 'link', link: '/', text: 'Collaborators' },
+  { icon: 'flag', type: 'link', link: '/', text: 'Moderation options' },
+  { type: 'title', text: 'Code and automation' },
+  { icon: 'close', type: 'link', link: '/', text: 'Branches' },
+  { icon: 'heart', type: 'link', link: '/', text: 'Tags' },
+  { icon: 'menu', type: 'link', link: '/', text: 'Rules' },
+  { icon: 'search', type: 'link', link: '/', text: 'Actions' },
+  { icon: 'text-document', type: 'link', link: '/', text: 'Environments' },
+  { type: 'title', text: 'Security' },
+  { icon: 'flag', type: 'link', link: '/', text: 'Code' },
+  { icon: 'check', type: 'link', link: '/', text: 'Pages' }
+] as MenuConfig
 </script>
 
 <template>
   <main class="display">
     <section>
       <pre>UiMenu.vue</pre>
-      <UiMenu />
+      <UiMenuZ :config="config" />
     </section>
     <section>
       <pre>UiCheckbox.vue</pre>
