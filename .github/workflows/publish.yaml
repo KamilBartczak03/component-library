@@ -6,13 +6,9 @@ on:
       - main
 
 jobs:
-
-  pnpm: 
-
-  build and publish:
+   publish:
     runs-on: ubuntu-latest
     - uses: actions/checkout@v3
-      name: setup checkout
     - uses: actions/setup-node@v3
       with:
         node-version: 18
@@ -31,24 +27,3 @@ jobs:
       run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-
-
-  release:
-    name: publish package
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2.1.1
-      - name: node
-        uses: actions/setup-node@v1.4.2
-        with:
-          node-version: 18
-          registry-url: https://registry.npmjs.org
-      - name: publish
-        run: |
-          npm i -g pnpm@7.29.3
-          pnpm i --frozen-lockfile
-          pnpm build
-          npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
