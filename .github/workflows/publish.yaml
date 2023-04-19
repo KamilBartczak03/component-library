@@ -8,14 +8,15 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: checkout
+      uses: actions/checkout@v3
+      - name: setup node
+      uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
-        name: setup node
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
+      - name: install pnpm
+      uses: pnpm/action-setup@v2
         with:
           version: 7
       - name: install packages
