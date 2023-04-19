@@ -12,6 +12,7 @@ export const UiIcon = defineAsyncComponent(() => import('@components/UiIcon.vue'
 export const UiSidebarElement = defineAsyncComponent(() => import('@components/UiSidebarElement.vue'))
 export const UiSwitch = defineAsyncComponent(() => import('@components/UiSwitch.vue'))
 export const UiCheckbox = defineAsyncComponent(() => import('@components/UiCheckbox.vue'))
+export const UiMenu = defineAsyncComponent(() => import('@components/Menu/UiMenu.vue'))
 
 export default {
   install(app: App) {
@@ -23,6 +24,7 @@ export default {
     app.component('UiIcon', UiIcon)
     app.component('UiSwitch', UiSwitch)
     app.component('UiCheckbox', UiCheckbox)
+    app.component('UiMenu', UiMenu)
   }
 }
 
@@ -36,5 +38,6 @@ declare module '@vue/runtime-core' {
     UiIcon: typeof UiIcon
     UiSwitch: typeof UiSwitch
     UiCheckbox: typeof UiCheckbox
+    UiMenu: typeof UiMenu
   }
 }

@@ -12,6 +12,10 @@ const sidebarItems = [
 <template>
   <main class="display">
     <section>
+      <pre>UiMenu.vue</pre>
+      <UiMenu />
+    </section>
+    <section>
       <pre>UiCheckbox.vue</pre>
       <UiCheckbox v-model="expandedNav" caption="Expand menu" />
     </section>
