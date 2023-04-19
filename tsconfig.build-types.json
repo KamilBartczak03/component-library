@@ -1,7 +1,10 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/index.ts"],
+  "include": ["env.d.ts", "src/index.ts", "src/types/**.ts"],
   "compilerOptions": {
+    "declarationDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

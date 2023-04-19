@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:types": "vue-tsc --project tsconfig.build-types.json --declaration --emitDeclarationOnly --outDir dist/types ",
+    "build:types": "vue-tsc --project tsconfig.build-types.json",
     "build": "vite build && npm run build:types",
     "typecheck": "vue-tsc --project tsconfig.build-types.json --noEmit",
     "preview": "vite preview"
