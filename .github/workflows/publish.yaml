@@ -21,8 +21,7 @@ jobs:
         with:
           version: 7
       - name: Install packages and build
-        run: pnpm install --frozen-lockfile
-        run: pnpm build
+        run: pnpm install --frozen-lockfile & pnpm build
       # - name: checkout
       # uses:
       # - name: setup node
@@ -31,7 +30,6 @@ jobs:
       #     node-version: 18
       #
       # - name: install pnpm
-      
       # - name: install packages
       #   run: pnpm install --frozen-lockfile
       # - name: build
