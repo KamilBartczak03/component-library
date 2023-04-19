@@ -1,6 +1,6 @@
 {
   "name": "@kamilbartczak-infer/component-library",
-  "version": "0.0.6",
+  "version": "0.0.61",
   "type": "module",
   "scripts": {
     "dev": "vite",

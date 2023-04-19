@@ -11,7 +11,6 @@ export default defineConfig({
     }
   },
   build: {
-    assetsDir: resolve(__dirname, 'src/icons'),
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'component-library',
